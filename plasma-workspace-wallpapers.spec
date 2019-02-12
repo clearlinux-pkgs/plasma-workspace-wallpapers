@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.14.5
-Release  : 10
-URL      : https://download.kde.org/stable/plasma/5.14.5/plasma-workspace-wallpapers-5.14.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.14.5/plasma-workspace-wallpapers-5.14.5.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.14.5/plasma-workspace-wallpapers-5.14.5.tar.xz.sig
+Version  : 5.15.0
+Release  : 11
+URL      : https://download.kde.org/stable/plasma/5.15.0/plasma-workspace-wallpapers-5.15.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.15.0/plasma-workspace-wallpapers-5.15.0.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.15.0/plasma-workspace-wallpapers-5.15.0.tar.xz.sig
 Summary  : Additional wallpapers for the Plasma Workspace
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -38,14 +38,14 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.14.5
+%setup -q -n plasma-workspace-wallpapers-5.15.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546969849
+export SOURCE_DATE_EPOCH=1549987997
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -53,7 +53,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1546969849
+export SOURCE_DATE_EPOCH=1549987997
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING
@@ -95,6 +95,12 @@ popd
 /usr/share/wallpapers/BytheWater/contents/images/800x600.jpg
 /usr/share/wallpapers/BytheWater/contents/screenshot.jpg
 /usr/share/wallpapers/BytheWater/metadata.desktop
+/usr/share/wallpapers/Canopee/contents/images/3840x2160.png
+/usr/share/wallpapers/Canopee/contents/screenshot.png
+/usr/share/wallpapers/Canopee/metadata.desktop
+/usr/share/wallpapers/Cascade/contents/images/3840x2160.png
+/usr/share/wallpapers/Cascade/contents/screenshot.png
+/usr/share/wallpapers/Cascade/metadata.desktop
 /usr/share/wallpapers/ColdRipple/contents/images/1280x1024.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1280x800.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1440x900.jpg
@@ -109,18 +115,7 @@ popd
 /usr/share/wallpapers/ColdRipple/contents/images/800x600.jpg
 /usr/share/wallpapers/ColdRipple/contents/screenshot.jpg
 /usr/share/wallpapers/ColdRipple/metadata.desktop
-/usr/share/wallpapers/ColorfulCups/contents/images/1280x1024.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1280x800.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1440x900.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1600x1200.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1638x1024.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1680x1050.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1920x1080.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/1920x1200.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/2560x1440.jpg
 /usr/share/wallpapers/ColorfulCups/contents/images/2560x1600.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/640x480.jpg
-/usr/share/wallpapers/ColorfulCups/contents/images/800x600.jpg
 /usr/share/wallpapers/ColorfulCups/contents/screenshot.jpg
 /usr/share/wallpapers/ColorfulCups/metadata.desktop
 /usr/share/wallpapers/DarkestHour/contents/images/1280x1024.jpg
@@ -207,6 +202,9 @@ popd
 /usr/share/wallpapers/Kite/contents/images/800x600.jpg
 /usr/share/wallpapers/Kite/contents/screenshot.jpg
 /usr/share/wallpapers/Kite/metadata.desktop
+/usr/share/wallpapers/Kokkini/contents/images/3840x2160.png
+/usr/share/wallpapers/Kokkini/contents/screenshot.png
+/usr/share/wallpapers/Kokkini/metadata.desktop
 /usr/share/wallpapers/OneStandsOut/contents/images/1280x1024.jpg
 /usr/share/wallpapers/OneStandsOut/contents/images/1280x800.jpg
 /usr/share/wallpapers/OneStandsOut/contents/images/1440x900.jpg
@@ -221,7 +219,9 @@ popd
 /usr/share/wallpapers/OneStandsOut/contents/images/800x600.jpg
 /usr/share/wallpapers/OneStandsOut/contents/screenshot.jpg
 /usr/share/wallpapers/OneStandsOut/metadata.desktop
-/usr/share/wallpapers/PastelHills/contents/images/1024x768.jpg
+/usr/share/wallpapers/Opal/contents/images/3840x2160.png
+/usr/share/wallpapers/Opal/contents/screenshot.png
+/usr/share/wallpapers/Opal/metadata.desktop
 /usr/share/wallpapers/PastelHills/contents/images/1280x1024.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1280x800.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1440x900.jpg
@@ -229,10 +229,11 @@ popd
 /usr/share/wallpapers/PastelHills/contents/images/1638x1024.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1680x1050.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1920x1080.jpg
+/usr/share/wallpapers/PastelHills/contents/images/1920x1200.jpg
 /usr/share/wallpapers/PastelHills/contents/images/2560x1440.jpg
-/usr/share/wallpapers/PastelHills/contents/images/2560x1600.jpg
-/usr/share/wallpapers/PastelHills/contents/images/3200x1800.jpg
 /usr/share/wallpapers/PastelHills/contents/images/3200x2000.jpg
+/usr/share/wallpapers/PastelHills/contents/images/640x480.jpg
+/usr/share/wallpapers/PastelHills/contents/images/800x600.jpg
 /usr/share/wallpapers/PastelHills/contents/screenshot.jpg
 /usr/share/wallpapers/PastelHills/metadata.desktop
 /usr/share/wallpapers/Path/contents/images/1280x1024.jpg
@@ -249,6 +250,20 @@ popd
 /usr/share/wallpapers/Path/contents/images/800x600.jpg
 /usr/share/wallpapers/Path/contents/screenshot.jpg
 /usr/share/wallpapers/Path/metadata.desktop
+/usr/share/wallpapers/summer_1am/contents/images/1280x1024.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1280x800.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1440x900.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1600x1200.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1638x1024.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1680x1050.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1920x1080.jpg
+/usr/share/wallpapers/summer_1am/contents/images/1920x1200.jpg
+/usr/share/wallpapers/summer_1am/contents/images/2560x1440.jpg
+/usr/share/wallpapers/summer_1am/contents/images/2560x1600.jpg
+/usr/share/wallpapers/summer_1am/contents/images/640x480.jpg
+/usr/share/wallpapers/summer_1am/contents/images/800x600.jpg
+/usr/share/wallpapers/summer_1am/contents/screenshot.jpg
+/usr/share/wallpapers/summer_1am/metadata.desktop
 
 %files license
 %defattr(0644,root,root,0755)
