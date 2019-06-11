@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.15.5
-Release  : 18
-URL      : https://download.kde.org/stable/plasma/5.15.5/plasma-workspace-wallpapers-5.15.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.15.5/plasma-workspace-wallpapers-5.15.5.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.15.5/plasma-workspace-wallpapers-5.15.5.tar.xz.sig
+Version  : 5.16.0
+Release  : 19
+URL      : https://download.kde.org/stable/plasma/5.16.0/plasma-workspace-wallpapers-5.16.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.16.0/plasma-workspace-wallpapers-5.16.0.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.16.0/plasma-workspace-wallpapers-5.16.0.tar.xz.sig
 Summary  : Additional wallpapers for the Plasma Workspace
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -38,14 +38,14 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.15.5
+%setup -q -n plasma-workspace-wallpapers-5.16.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557248888
+export SOURCE_DATE_EPOCH=1560272920
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -60,7 +60,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557248888
+export SOURCE_DATE_EPOCH=1560272920
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING
@@ -108,6 +108,9 @@ popd
 /usr/share/wallpapers/Cascade/contents/images/3840x2160.png
 /usr/share/wallpapers/Cascade/contents/screenshot.png
 /usr/share/wallpapers/Cascade/metadata.desktop
+/usr/share/wallpapers/Cluster/contents/images/3840x2160.png
+/usr/share/wallpapers/Cluster/contents/screenshot.png
+/usr/share/wallpapers/Cluster/metadata.desktop
 /usr/share/wallpapers/ColdRipple/contents/images/1280x1024.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1280x800.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1440x900.jpg
@@ -139,6 +142,9 @@ popd
 /usr/share/wallpapers/DarkestHour/contents/images/800x600.jpg
 /usr/share/wallpapers/DarkestHour/contents/screenshot.jpg
 /usr/share/wallpapers/DarkestHour/metadata.desktop
+/usr/share/wallpapers/Elarun/contents/images/2560x1600.png
+/usr/share/wallpapers/Elarun/contents/screenshot.jpg
+/usr/share/wallpapers/Elarun/metadata.desktop
 /usr/share/wallpapers/EveningGlow/contents/images/1280x1024.jpg
 /usr/share/wallpapers/EveningGlow/contents/images/1280x800.jpg
 /usr/share/wallpapers/EveningGlow/contents/images/1440x900.jpg
@@ -257,6 +263,9 @@ popd
 /usr/share/wallpapers/Path/contents/images/800x600.jpg
 /usr/share/wallpapers/Path/contents/screenshot.jpg
 /usr/share/wallpapers/Path/metadata.desktop
+/usr/share/wallpapers/SafeLanding/contents/images/5120x2880.jpg
+/usr/share/wallpapers/SafeLanding/contents/screenshot.jpg
+/usr/share/wallpapers/SafeLanding/metadata.desktop
 /usr/share/wallpapers/summer_1am/contents/images/1280x1024.jpg
 /usr/share/wallpapers/summer_1am/contents/images/1280x800.jpg
 /usr/share/wallpapers/summer_1am/contents/images/1440x900.jpg
