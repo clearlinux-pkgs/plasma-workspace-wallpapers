@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.16.4
-Release  : 23
-URL      : https://download.kde.org/stable/plasma/5.16.4/plasma-workspace-wallpapers-5.16.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.4/plasma-workspace-wallpapers-5.16.4.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.4/plasma-workspace-wallpapers-5.16.4.tar.xz.sig
+Version  : 5.16.5
+Release  : 24
+URL      : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz.sig
 Summary  : Additional wallpapers for the Plasma Workspace
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -38,16 +38,17 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.16.4
+%setup -q -n plasma-workspace-wallpapers-5.16.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564515875
+export SOURCE_DATE_EPOCH=1567651473
 mkdir -p clr-build
 pushd clr-build
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -61,7 +62,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1564515875
+export SOURCE_DATE_EPOCH=1567651473
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING
