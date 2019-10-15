@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.16.5
-Release  : 24
-URL      : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.5/plasma-workspace-wallpapers-5.16.5.tar.xz.sig
+Version  : 5.17.0
+Release  : 25
+URL      : https://download.kde.org/stable/plasma/5.17.0/plasma-workspace-wallpapers-5.17.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.0/plasma-workspace-wallpapers-5.17.0.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.0/plasma-workspace-wallpapers-5.17.0.tar.xz.sig
 Summary  : Additional wallpapers for the Plasma Workspace
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -38,14 +38,14 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.16.5
+%setup -q -n plasma-workspace-wallpapers-5.17.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567651473
+export SOURCE_DATE_EPOCH=1571168282
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -58,15 +58,15 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1567651473
+export SOURCE_DATE_EPOCH=1571168282
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
-cp COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING
-cp COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING.LGPL3
+cp %{_builddir}/plasma-workspace-wallpapers-5.17.0/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/plasma-workspace-wallpapers-5.17.0/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
 pushd clr-build
 %make_install
 popd
@@ -285,5 +285,5 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING
-/usr/share/package-licenses/plasma-workspace-wallpapers/COPYING.LGPL3
+/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
+/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
