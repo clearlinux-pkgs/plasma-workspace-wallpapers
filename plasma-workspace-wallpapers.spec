@@ -5,18 +5,19 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.18.4.1
-Release  : 35
-URL      : https://download.kde.org/stable/plasma/5.18.4/plasma-workspace-wallpapers-5.18.4.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.4/plasma-workspace-wallpapers-5.18.4.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.4/plasma-workspace-wallpapers-5.18.4.1.tar.xz.sig
-Summary  : Additional wallpapers for the Plasma Workspace
+Version  : 5.18.5
+Release  : 36
+URL      : https://download.kde.org/stable/plasma/5.18.5/plasma-workspace-wallpapers-5.18.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.18.5/plasma-workspace-wallpapers-5.18.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.18.5/plasma-workspace-wallpapers-5.18.5.tar.xz.sig
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
 Requires: plasma-workspace-wallpapers-data = %{version}-%{release}
 Requires: plasma-workspace-wallpapers-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
+BuildRequires : extra-cmake-modules-data
 
 %description
 No detailed description available
@@ -38,36 +39,35 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.18.4.1
-cd %{_builddir}/plasma-workspace-wallpapers-5.18.4.1
+%setup -q -n plasma-workspace-wallpapers-5.18.5
+cd %{_builddir}/plasma-workspace-wallpapers-5.18.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585690431
+export SOURCE_DATE_EPOCH=1588707082
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
 make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1585690431
+export SOURCE_DATE_EPOCH=1588707082
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
-cp %{_builddir}/plasma-workspace-wallpapers-5.18.4.1/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/plasma-workspace-wallpapers-5.18.4.1/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/plasma-workspace-wallpapers-5.18.5/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/plasma-workspace-wallpapers-5.18.5/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
 pushd clr-build
 %make_install
 popd
