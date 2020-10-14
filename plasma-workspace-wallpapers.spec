@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.19.4
-Release  : 40
-URL      : https://download.kde.org/stable/plasma/5.19.4/plasma-workspace-wallpapers-5.19.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.4/plasma-workspace-wallpapers-5.19.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.4/plasma-workspace-wallpapers-5.19.4.tar.xz.sig
+Version  : 5.20.0
+Release  : 41
+URL      : https://download.kde.org/stable/plasma/5.20.0/plasma-workspace-wallpapers-5.20.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.20.0/plasma-workspace-wallpapers-5.20.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.20.0/plasma-workspace-wallpapers-5.20.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -39,15 +39,15 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.19.4
-cd %{_builddir}/plasma-workspace-wallpapers-5.19.4
+%setup -q -n plasma-workspace-wallpapers-5.20.0
+cd %{_builddir}/plasma-workspace-wallpapers-5.20.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597636617
+export SOURCE_DATE_EPOCH=1602694383
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -63,11 +63,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1597636617
+export SOURCE_DATE_EPOCH=1602694383
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
-cp %{_builddir}/plasma-workspace-wallpapers-5.19.4/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/plasma-workspace-wallpapers-5.19.4/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/plasma-workspace-wallpapers-5.20.0/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/plasma-workspace-wallpapers-5.20.0/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
 pushd clr-build
 %make_install
 popd
@@ -176,6 +176,10 @@ popd
 /usr/share/wallpapers/FallenLeaf/contents/images/800x600.jpg
 /usr/share/wallpapers/FallenLeaf/contents/screenshot.jpg
 /usr/share/wallpapers/FallenLeaf/metadata.desktop
+/usr/share/wallpapers/Flow/contents/images/5120x2880.jpg
+/usr/share/wallpapers/Flow/contents/images/720x1440.jpg
+/usr/share/wallpapers/Flow/contents/screenshot.png
+/usr/share/wallpapers/Flow/metadata.desktop
 /usr/share/wallpapers/FlyingKonqui/contents/images/1280x1024.png
 /usr/share/wallpapers/FlyingKonqui/contents/images/1280x800.png
 /usr/share/wallpapers/FlyingKonqui/contents/images/1440x900.png
