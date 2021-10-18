@@ -4,7 +4,7 @@
 #
 Name     : plasma-workspace-wallpapers
 Version  : 5.23.0
-Release  : 51
+Release  : 52
 URL      : https://download.kde.org/stable/plasma/5.23.0/plasma-workspace-wallpapers-5.23.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.23.0/plasma-workspace-wallpapers-5.23.0.tar.xz
 Summary  : No detailed summary available
