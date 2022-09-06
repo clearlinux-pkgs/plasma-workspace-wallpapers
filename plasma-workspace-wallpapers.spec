@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.25.4
-Release  : 68
-URL      : https://download.kde.org/stable/plasma/5.25.4/plasma-workspace-wallpapers-5.25.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.4/plasma-workspace-wallpapers-5.25.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.4/plasma-workspace-wallpapers-5.25.4.tar.xz.sig
+Version  : 5.25.5
+Release  : 69
+URL      : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -39,15 +39,15 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.25.4
-cd %{_builddir}/plasma-workspace-wallpapers-5.25.4
+%setup -q -n plasma-workspace-wallpapers-5.25.5
+cd %{_builddir}/plasma-workspace-wallpapers-5.25.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659711214
+export SOURCE_DATE_EPOCH=1662501910
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -63,11 +63,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1659711214
+export SOURCE_DATE_EPOCH=1662501910
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
-cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976 || :
+cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/f45ee1c765646813b442ca58de72e20a64a7ddba || :
 pushd clr-build
 %make_install
 popd
