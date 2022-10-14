@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.25.5
-Release  : 69
-URL      : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.5/plasma-workspace-wallpapers-5.25.5.tar.xz.sig
+Version  : 5.26.0
+Release  : 70
+URL      : https://download.kde.org/stable/plasma/5.26.0/plasma-workspace-wallpapers-5.26.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.0/plasma-workspace-wallpapers-5.26.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.0/plasma-workspace-wallpapers-5.26.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -39,15 +39,15 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.25.5
-cd %{_builddir}/plasma-workspace-wallpapers-5.25.5
+%setup -q -n plasma-workspace-wallpapers-5.26.0
+cd %{_builddir}/plasma-workspace-wallpapers-5.26.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662501910
+export SOURCE_DATE_EPOCH=1665722714
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -63,7 +63,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662501910
+export SOURCE_DATE_EPOCH=1665722714
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976 || :
@@ -80,7 +80,7 @@ popd
 /usr/share/wallpapers/Altai/contents/images/1080x1920.png
 /usr/share/wallpapers/Altai/contents/images/5120x2880.png
 /usr/share/wallpapers/Altai/contents/screenshot.png
-/usr/share/wallpapers/Altai/metadata.desktop
+/usr/share/wallpapers/Altai/metadata.json
 /usr/share/wallpapers/Autumn/contents/images/1280x1024.jpg
 /usr/share/wallpapers/Autumn/contents/images/1280x800.jpg
 /usr/share/wallpapers/Autumn/contents/images/1440x900.jpg
@@ -94,7 +94,7 @@ popd
 /usr/share/wallpapers/Autumn/contents/images/640x480.jpg
 /usr/share/wallpapers/Autumn/contents/images/800x600.jpg
 /usr/share/wallpapers/Autumn/contents/screenshot.jpg
-/usr/share/wallpapers/Autumn/metadata.desktop
+/usr/share/wallpapers/Autumn/metadata.json
 /usr/share/wallpapers/BytheWater/contents/images/1280x1024.jpg
 /usr/share/wallpapers/BytheWater/contents/images/1280x800.jpg
 /usr/share/wallpapers/BytheWater/contents/images/1440x900.jpg
@@ -108,16 +108,16 @@ popd
 /usr/share/wallpapers/BytheWater/contents/images/640x480.jpg
 /usr/share/wallpapers/BytheWater/contents/images/800x600.jpg
 /usr/share/wallpapers/BytheWater/contents/screenshot.jpg
-/usr/share/wallpapers/BytheWater/metadata.desktop
+/usr/share/wallpapers/BytheWater/metadata.json
 /usr/share/wallpapers/Canopee/contents/images/3840x2160.png
 /usr/share/wallpapers/Canopee/contents/screenshot.png
-/usr/share/wallpapers/Canopee/metadata.desktop
+/usr/share/wallpapers/Canopee/metadata.json
 /usr/share/wallpapers/Cascade/contents/images/3840x2160.png
 /usr/share/wallpapers/Cascade/contents/screenshot.png
-/usr/share/wallpapers/Cascade/metadata.desktop
+/usr/share/wallpapers/Cascade/metadata.json
 /usr/share/wallpapers/Cluster/contents/images/3840x2160.png
 /usr/share/wallpapers/Cluster/contents/screenshot.png
-/usr/share/wallpapers/Cluster/metadata.desktop
+/usr/share/wallpapers/Cluster/metadata.json
 /usr/share/wallpapers/ColdRipple/contents/images/1280x1024.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1280x800.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/1440x900.jpg
@@ -131,10 +131,10 @@ popd
 /usr/share/wallpapers/ColdRipple/contents/images/640x480.jpg
 /usr/share/wallpapers/ColdRipple/contents/images/800x600.jpg
 /usr/share/wallpapers/ColdRipple/contents/screenshot.jpg
-/usr/share/wallpapers/ColdRipple/metadata.desktop
+/usr/share/wallpapers/ColdRipple/metadata.json
 /usr/share/wallpapers/ColorfulCups/contents/images/2560x1600.jpg
 /usr/share/wallpapers/ColorfulCups/contents/screenshot.jpg
-/usr/share/wallpapers/ColorfulCups/metadata.desktop
+/usr/share/wallpapers/ColorfulCups/metadata.json
 /usr/share/wallpapers/DarkestHour/contents/images/1280x1024.jpg
 /usr/share/wallpapers/DarkestHour/contents/images/1280x800.jpg
 /usr/share/wallpapers/DarkestHour/contents/images/1440x900.jpg
@@ -148,10 +148,10 @@ popd
 /usr/share/wallpapers/DarkestHour/contents/images/640x480.jpg
 /usr/share/wallpapers/DarkestHour/contents/images/800x600.jpg
 /usr/share/wallpapers/DarkestHour/contents/screenshot.jpg
-/usr/share/wallpapers/DarkestHour/metadata.desktop
+/usr/share/wallpapers/DarkestHour/metadata.json
 /usr/share/wallpapers/Elarun/contents/images/2560x1600.png
 /usr/share/wallpapers/Elarun/contents/screenshot.jpg
-/usr/share/wallpapers/Elarun/metadata.desktop
+/usr/share/wallpapers/Elarun/metadata.json
 /usr/share/wallpapers/EveningGlow/contents/images/1280x1024.jpg
 /usr/share/wallpapers/EveningGlow/contents/images/1280x800.jpg
 /usr/share/wallpapers/EveningGlow/contents/images/1440x900.jpg
@@ -165,7 +165,7 @@ popd
 /usr/share/wallpapers/EveningGlow/contents/images/640x480.jpg
 /usr/share/wallpapers/EveningGlow/contents/images/800x600.jpg
 /usr/share/wallpapers/EveningGlow/contents/screenshot.jpg
-/usr/share/wallpapers/EveningGlow/metadata.desktop
+/usr/share/wallpapers/EveningGlow/metadata.json
 /usr/share/wallpapers/FallenLeaf/contents/images/1280x1024.jpg
 /usr/share/wallpapers/FallenLeaf/contents/images/1280x800.jpg
 /usr/share/wallpapers/FallenLeaf/contents/images/1440x900.jpg
@@ -179,11 +179,13 @@ popd
 /usr/share/wallpapers/FallenLeaf/contents/images/640x480.jpg
 /usr/share/wallpapers/FallenLeaf/contents/images/800x600.jpg
 /usr/share/wallpapers/FallenLeaf/contents/screenshot.jpg
-/usr/share/wallpapers/FallenLeaf/metadata.desktop
+/usr/share/wallpapers/FallenLeaf/metadata.json
 /usr/share/wallpapers/Flow/contents/images/5120x2880.jpg
 /usr/share/wallpapers/Flow/contents/images/720x1440.jpg
+/usr/share/wallpapers/Flow/contents/images_dark/5120x2880.jpg
+/usr/share/wallpapers/Flow/contents/images_dark/720x1440.jpg
 /usr/share/wallpapers/Flow/contents/screenshot.png
-/usr/share/wallpapers/Flow/metadata.desktop
+/usr/share/wallpapers/Flow/metadata.json
 /usr/share/wallpapers/FlyingKonqui/contents/images/1280x1024.png
 /usr/share/wallpapers/FlyingKonqui/contents/images/1280x800.png
 /usr/share/wallpapers/FlyingKonqui/contents/images/1440x900.png
@@ -197,7 +199,7 @@ popd
 /usr/share/wallpapers/FlyingKonqui/contents/images/640x480.png
 /usr/share/wallpapers/FlyingKonqui/contents/images/800x600.png
 /usr/share/wallpapers/FlyingKonqui/contents/screenshot.png
-/usr/share/wallpapers/FlyingKonqui/metadata.desktop
+/usr/share/wallpapers/FlyingKonqui/metadata.json
 /usr/share/wallpapers/Grey/contents/images/1280x1024.jpg
 /usr/share/wallpapers/Grey/contents/images/1280x800.jpg
 /usr/share/wallpapers/Grey/contents/images/1440x900.jpg
@@ -211,14 +213,14 @@ popd
 /usr/share/wallpapers/Grey/contents/images/640x480.jpg
 /usr/share/wallpapers/Grey/contents/images/800x600.jpg
 /usr/share/wallpapers/Grey/contents/screenshot.jpg
-/usr/share/wallpapers/Grey/metadata.desktop
+/usr/share/wallpapers/Grey/metadata.json
 /usr/share/wallpapers/Honeywave/contents/images/1080x1920.jpg
 /usr/share/wallpapers/Honeywave/contents/images/5120x2880.jpg
 /usr/share/wallpapers/Honeywave/contents/screenshot.png
-/usr/share/wallpapers/Honeywave/metadata.desktop
+/usr/share/wallpapers/Honeywave/metadata.json
 /usr/share/wallpapers/IceCold/contents/images/5120x2880.png
 /usr/share/wallpapers/IceCold/contents/screenshot.png
-/usr/share/wallpapers/IceCold/metadata.desktop
+/usr/share/wallpapers/IceCold/metadata.json
 /usr/share/wallpapers/Kite/contents/images/1280x1024.jpg
 /usr/share/wallpapers/Kite/contents/images/1280x800.jpg
 /usr/share/wallpapers/Kite/contents/images/1440x900.jpg
@@ -232,14 +234,14 @@ popd
 /usr/share/wallpapers/Kite/contents/images/640x480.jpg
 /usr/share/wallpapers/Kite/contents/images/800x600.jpg
 /usr/share/wallpapers/Kite/contents/screenshot.jpg
-/usr/share/wallpapers/Kite/metadata.desktop
+/usr/share/wallpapers/Kite/metadata.json
 /usr/share/wallpapers/Kokkini/contents/images/3840x2160.png
 /usr/share/wallpapers/Kokkini/contents/screenshot.png
-/usr/share/wallpapers/Kokkini/metadata.desktop
+/usr/share/wallpapers/Kokkini/metadata.json
 /usr/share/wallpapers/MilkyWay/contents/images/1080x1920.png
 /usr/share/wallpapers/MilkyWay/contents/images/5120x2880.png
 /usr/share/wallpapers/MilkyWay/contents/screenshot.png
-/usr/share/wallpapers/MilkyWay/metadata.desktop
+/usr/share/wallpapers/MilkyWay/metadata.json
 /usr/share/wallpapers/OneStandsOut/contents/images/1280x1024.jpg
 /usr/share/wallpapers/OneStandsOut/contents/images/1280x800.jpg
 /usr/share/wallpapers/OneStandsOut/contents/images/1440x900.jpg
@@ -253,10 +255,10 @@ popd
 /usr/share/wallpapers/OneStandsOut/contents/images/640x480.jpg
 /usr/share/wallpapers/OneStandsOut/contents/images/800x600.jpg
 /usr/share/wallpapers/OneStandsOut/contents/screenshot.jpg
-/usr/share/wallpapers/OneStandsOut/metadata.desktop
+/usr/share/wallpapers/OneStandsOut/metadata.json
 /usr/share/wallpapers/Opal/contents/images/3840x2160.png
 /usr/share/wallpapers/Opal/contents/screenshot.png
-/usr/share/wallpapers/Opal/metadata.desktop
+/usr/share/wallpapers/Opal/metadata.json
 /usr/share/wallpapers/PastelHills/contents/images/1280x1024.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1280x800.jpg
 /usr/share/wallpapers/PastelHills/contents/images/1440x900.jpg
@@ -270,11 +272,12 @@ popd
 /usr/share/wallpapers/PastelHills/contents/images/640x480.jpg
 /usr/share/wallpapers/PastelHills/contents/images/800x600.jpg
 /usr/share/wallpapers/PastelHills/contents/screenshot.jpg
-/usr/share/wallpapers/PastelHills/metadata.desktop
+/usr/share/wallpapers/PastelHills/metadata.json
 /usr/share/wallpapers/Patak/contents/images/1080x1920.png
 /usr/share/wallpapers/Patak/contents/images/5120x2880.png
+/usr/share/wallpapers/Patak/contents/images_dark/3840x2160.png
 /usr/share/wallpapers/Patak/contents/screenshot.png
-/usr/share/wallpapers/Patak/metadata.desktop
+/usr/share/wallpapers/Patak/metadata.json
 /usr/share/wallpapers/Path/contents/images/1280x1024.jpg
 /usr/share/wallpapers/Path/contents/images/1280x800.jpg
 /usr/share/wallpapers/Path/contents/images/1440x900.jpg
@@ -288,14 +291,18 @@ popd
 /usr/share/wallpapers/Path/contents/images/640x480.jpg
 /usr/share/wallpapers/Path/contents/images/800x600.jpg
 /usr/share/wallpapers/Path/contents/screenshot.jpg
-/usr/share/wallpapers/Path/metadata.desktop
+/usr/share/wallpapers/Path/metadata.json
+/usr/share/wallpapers/SafeLanding/contents/images/1622x2880.jpg
+/usr/share/wallpapers/SafeLanding/contents/images/5120x2880.jpg
+/usr/share/wallpapers/SafeLanding/contents/screenshot.jpg
+/usr/share/wallpapers/SafeLanding/metadata.desktop
 /usr/share/wallpapers/Shell/contents/images/5120x2880.jpg
 /usr/share/wallpapers/Shell/contents/images/720x1440.jpg
 /usr/share/wallpapers/Shell/contents/screenshot.png
-/usr/share/wallpapers/Shell/metadata.desktop
+/usr/share/wallpapers/Shell/metadata.json
 /usr/share/wallpapers/Volna/contents/images/5120x2880.jpg
 /usr/share/wallpapers/Volna/contents/screenshot.png
-/usr/share/wallpapers/Volna/metadata.desktop
+/usr/share/wallpapers/Volna/metadata.json
 /usr/share/wallpapers/summer_1am/contents/images/1280x1024.jpg
 /usr/share/wallpapers/summer_1am/contents/images/1280x800.jpg
 /usr/share/wallpapers/summer_1am/contents/images/1440x900.jpg
@@ -309,7 +316,7 @@ popd
 /usr/share/wallpapers/summer_1am/contents/images/640x480.jpg
 /usr/share/wallpapers/summer_1am/contents/images/800x600.jpg
 /usr/share/wallpapers/summer_1am/contents/screenshot.jpg
-/usr/share/wallpapers/summer_1am/metadata.desktop
+/usr/share/wallpapers/summer_1am/metadata.json
 
 %files license
 %defattr(0644,root,root,0755)
