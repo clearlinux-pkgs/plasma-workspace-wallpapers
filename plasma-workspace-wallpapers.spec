@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.26.4
-Release  : 74
-URL      : https://download.kde.org/stable/plasma/5.26.4/plasma-workspace-wallpapers-5.26.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.26.4/plasma-workspace-wallpapers-5.26.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.26.4/plasma-workspace-wallpapers-5.26.4.tar.xz.sig
+Version  : 5.26.5
+Release  : 75
+URL      : https://download.kde.org/stable/plasma/5.26.5/plasma-workspace-wallpapers-5.26.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.5/plasma-workspace-wallpapers-5.26.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.5/plasma-workspace-wallpapers-5.26.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -18,6 +18,9 @@ Requires: plasma-workspace-wallpapers-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 No detailed description available
@@ -39,31 +42,31 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.26.4
-cd %{_builddir}/plasma-workspace-wallpapers-5.26.4
+%setup -q -n plasma-workspace-wallpapers-5.26.5
+cd %{_builddir}/plasma-workspace-wallpapers-5.26.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1669816672
+export SOURCE_DATE_EPOCH=1673301920
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1669816672
+export SOURCE_DATE_EPOCH=1673301920
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976 || :
