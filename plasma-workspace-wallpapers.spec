@@ -6,7 +6,7 @@
 #
 Name     : plasma-workspace-wallpapers
 Version  : 5.27.0
-Release  : 76
+Release  : 77
 URL      : https://download.kde.org/stable/plasma/5.27.0/plasma-workspace-wallpapers-5.27.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.27.0/plasma-workspace-wallpapers-5.27.0.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.27.0/plasma-workspace-wallpapers-5.27.0.tar.xz.sig
@@ -50,7 +50,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676653166
+export SOURCE_DATE_EPOCH=1676870168
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -66,7 +66,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1676653166
+export SOURCE_DATE_EPOCH=1676870168
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976 || :
