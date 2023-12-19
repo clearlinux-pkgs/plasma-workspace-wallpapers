@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : plasma-workspace-wallpapers
-Version  : 5.27.9
-Release  : 87
-URL      : https://download.kde.org/stable/plasma/5.27.9/plasma-workspace-wallpapers-5.27.9.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.27.9/plasma-workspace-wallpapers-5.27.9.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.27.9/plasma-workspace-wallpapers-5.27.9.tar.xz.sig
+Version  : 5.27.10
+Release  : 88
+URL      : https://download.kde.org/stable/plasma/5.27.10/plasma-workspace-wallpapers-5.27.10.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.10/plasma-workspace-wallpapers-5.27.10.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.10/plasma-workspace-wallpapers-5.27.10.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-3.0
@@ -45,15 +45,15 @@ license components for the plasma-workspace-wallpapers package.
 
 
 %prep
-%setup -q -n plasma-workspace-wallpapers-5.27.9
-cd %{_builddir}/plasma-workspace-wallpapers-5.27.9
+%setup -q -n plasma-workspace-wallpapers-5.27.10
+cd %{_builddir}/plasma-workspace-wallpapers-5.27.10
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702060019
+export SOURCE_DATE_EPOCH=1702974667
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -112,7 +112,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702060019
+export SOURCE_DATE_EPOCH=1702974667
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers
 cp %{_builddir}/plasma-workspace-wallpapers-%{version}/COPYING %{buildroot}/usr/share/package-licenses/plasma-workspace-wallpapers/7c203dee3a03037da436df03c4b25b659c073976 || :
